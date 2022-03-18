@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import path from 'path';
-import { extractArguments } from './Utils/utils';
+import {extractArguments} from './Utils/utils';
+import CalculatingEncounters from "./calculatingEncounters/calculatingEncounters";
 
 let data = '';
 const args = extractArguments();
@@ -11,20 +12,6 @@ try {
     console.log('No se encontro el archivo', err);
 }
 
-const inputs = data.split('\n').filter(txt => txt !== "");
+CalculatingEncounters(data);
 
-const parseData = inputs.reduce((data: any, line, idx) => {
-    let current;
-    if((current = /(?<day>\w{2})(?<start>\d{2}:\d{2})-(?<end>\d{2}:\d{2})+/gm.exec(line)) != null) {
-        const day = current.groups!.day;
-        const daysAndHours = {
-            start: current.groups!.start,
-            end: current.groups!.end,
-            day,
-        }
-
-        data[idx].push(daysAndHours);
-    }
-    console.log(data);
-}, [[],[],[]])
 
