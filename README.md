@@ -1,5 +1,8 @@
 # Employee Meet Calculator
 
+![Test](https://github.com/rouderz/Exercise-company-acme/actions/workflows/test.yml/badge.svg)
+
+
 ## Description
 
 Calculate the number of encounters in a given week from hours worked, using the json database that has people and hourly based schedules
