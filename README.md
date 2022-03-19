@@ -19,7 +19,7 @@ where we have the files ordered by their functionality and types,
 for this project TDD was applied.
 
 
-##Structure
+## Structure
 
 > This is structure to folder in the project.
 

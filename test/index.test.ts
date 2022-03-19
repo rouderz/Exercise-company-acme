@@ -18,7 +18,7 @@ test('calculate meet two user', () => {
     expect(global.console.log).toHaveBeenCalledWith("ASTRID-ANDRES se encontraron una cantidad de veces: 3")
 });
 
-test('failed', () => {
+test('validation in case of an incorrect format', () => {
     const data = 'dadsa';
     const result = GroupEmployees(data);
     console.log(result);
