@@ -12,8 +12,9 @@ For the solution of this exercise, it was necessary to first hand read and go to
 ## Project
 
 This project uses a basic infrastructure of folders,
-where we have the files ordered by their functionality
-and types, this project applies tdd
+where we have the files ordered by their functionality and types,
+for this project TDD was applied.
+
 
 ##Structure
 
