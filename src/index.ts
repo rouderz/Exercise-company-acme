@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import path from 'path';
 import {extractArguments} from './Utils/utils';
-import CalculatingEncounters from "./calculatingEncounters/calculatingEncounters";
+import GroupEmployees from "./groupEmployees/groupEmployees";
 
 let data = '';
 const args = extractArguments();
@@ -12,6 +12,6 @@ try {
     console.log('No se encontro el archivo', err);
 }
 
-CalculatingEncounters(data);
+GroupEmployees(data);
 
 

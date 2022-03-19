@@ -21,7 +21,8 @@ for this project TDD was applied.
 > This is structure to folder in the project.
 
     ├── src
-    │   ├── calculatingEncounters # This folder is responsible for ordering and calculating meetings between employees
+    │   ├── calculatingEncounters # This folder is responsible for calculating meetings between employees
+    │   ├── groupEmployees # This folder is responsible for organizing employees into groups
     │   ├── global # In this folder are the types to be used globally
     │   └── utils  #The regex and the function to extract the parameters by console are stored in this folder.          
     └── test # Unit tests
