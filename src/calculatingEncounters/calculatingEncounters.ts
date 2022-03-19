@@ -12,18 +12,19 @@ const CalculatingEncounters = (data: string) => {
     const array: { name: string; days: DaysInput[] }[] = [];
     const inputs = data.split('\n').filter(txt => txt !== "");
 
-    inputs.map((res, i) => {
-        if (!validatorRegexFormat.exec(res || "")) {
-            console.log(`Line ${i + 1} is not in the correct format.`);
+    inputs.map((employedTimeAndWeek, index: number) => {
+        const schedule = employedTimeAndWeek.replace(/(\r\n|\n|\r)/gm, '');
+        if (!validatorRegexFormat.exec(schedule || "")) {
+            console.log(`Line ${index + 1} is not in the correct format.`);
             return;
         }
         array.push({
-            name: res.replace(validatorRegexName, ''),
-            days: res.match(validatorRegexDaysAndHours)!.map((day: string) => {
+            name: schedule.replace(validatorRegexName, ''),
+            days: schedule.match(validatorRegexDaysAndHours)!.map((time: string) => {
                 const dayInput: DaysInput = {
-                    start: day.match(validatorRegexHours)![0],
-                    end: day.match(validatorRegexHours)![0],
-                    day: day.match(validatorRegexDays)![0]
+                    start: time.match(validatorRegexHours)![0],
+                    end: time.match(validatorRegexHours)![0],
+                    day: time.match(validatorRegexDays)![0]
                 };
                 return dayInput;
             })
@@ -31,12 +32,12 @@ const CalculatingEncounters = (data: string) => {
     })
 
     for (const item of array) {
-        for (let j = 1; j < array.length; j++) {
-            const nameCombination = [item.name, array[j].name].sort().join('-');
-            if (item.name !== array[j].name && nameCombination !== item.name + '-' + array[j].name) {
+        for (let accountant = 1; accountant < array.length; accountant++) {
+            const nameCombination = [item.name, array[accountant].name].sort().join('-');
+            if (item.name !== array[accountant].name && nameCombination !== item.name + '-' + array[accountant].name) {
                 let quantity = 0;
                 for (const item1 of item.days) {
-                    for (const item2 of array[j].days) {
+                    for (const item2 of array[accountant].days) {
                         if (item1.day === item2.day) {
                             if (item1.start <= item2.start && item1.end >= item2.end) {
                                 quantity++;
@@ -44,7 +45,7 @@ const CalculatingEncounters = (data: string) => {
                         }
                     }
                 }
-                console.log(`${item.name + '-' + array[j].name +
+                console.log(`${item.name + '-' + array[accountant].name +
                 ' se encontraron una cantidad de veces: '
                 + quantity
                 }`);
