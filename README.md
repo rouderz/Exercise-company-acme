@@ -5,7 +5,7 @@
 Calculate the number of encounters in a given week from hours worked, using the json database that has people and hourly based schedules
 the day of the week and the day section
 
-##Solution
+## Solution
 
 For the solution of this exercise, it was necessary to first hand read and go to paper that had to be done, after being clear, that it was how many times the employees met in the week, the next step was taken, which was to develop the exercise, using typescript as the base language, as a first hand the strings were validated with regex to validate that it is in accordance with what was proposed and then to make the respective cuts to the string and pass them to an array and order them each 1 by their names and times, then for of and nested for were used to carry out the tours and compare the days and times of each one to later know how many times they meet.
 
