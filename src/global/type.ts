@@ -1,4 +1,4 @@
-export type DaysInput = {
+export type DayInput = {
     start: string;
     end: string;
     day: string;
